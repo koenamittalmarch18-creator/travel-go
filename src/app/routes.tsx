@@ -18,7 +18,7 @@ export function AppRoutes() {
         <Route path="/destinations/:packageId/enquiry" element={<EnquiryPage />} />
         <Route path="/destinations/:packageId/enquiry/success" element={<EnquiryConfirmationPage />} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="//contact" element={<ContactPage />} />
+        <Route path="/contact" element={<ContactPage />} />
 
       </Routes>
     </BrowserRouter>

@@ -1,4 +1,6 @@
 import { useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { travelPackages } from '../../../packages/data/packages.data';
 import {
   CalendarDays,
   ChevronDown,
@@ -28,9 +30,11 @@ const formatDate = (date: string): string => {
 export function HeroSection() {
   const [checkIn, setCheckIn] = useState('');
   const [checkOut, setCheckOut] = useState('');
+  const [destination, setDestination] = useState('');
 
   const checkInRef = useRef<DateInputRef | null>(null);
   const checkOutRef = useRef<DateInputRef | null>(null);
+  const navigate = useNavigate();
 
   const openDatePicker = (
     inputRef: React.RefObject<DateInputRef | null>,
@@ -48,7 +52,25 @@ export function HeroSection() {
 
     input.click();
   };
+  const handleSearch = () => {
+    const searchValue = destination.trim().toLowerCase();
 
+    if (!searchValue) {
+      return;
+    }
+
+    const matchedPackage = travelPackages.find(
+      (pkg) =>
+        pkg.destination.toLowerCase().includes(searchValue) ||
+        pkg.name.toLowerCase().includes(searchValue),
+    );
+
+    if (matchedPackage) {
+      navigate(`/destinations/${matchedPackage.id}`);
+    } else {
+      alert('No package found for this destination');
+    }
+  };
   return (
     <section className={styles.hero}>
       <div className={styles.overlay} />
@@ -83,6 +105,8 @@ export function HeroSection() {
                 id="destination"
                 type="text"
                 placeholder="Search destinations"
+                value={destination}
+                onChange={(e) => setDestination(e.target.value)}
               />
             </div>
           </div>
@@ -180,7 +204,11 @@ export function HeroSection() {
             </button>
           </div>
 
-          <button type="button" className={styles.searchButton}>
+          <button
+            type="button"
+            className={styles.searchButton}
+            onClick={handleSearch}
+          >
             Search
           </button>
         </div>

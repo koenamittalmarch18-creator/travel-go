@@ -40,7 +40,7 @@ export function PackageDetailsPage() {
             for.
           </p>
 
-          <Link to="/destination">
+          <Link to="/destinations">
             Explore Destinations
           </Link>
         </main>

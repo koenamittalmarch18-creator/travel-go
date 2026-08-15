@@ -1,5 +1,5 @@
 import { ArrowRight, MapPin } from 'lucide-react';
-
+import { Link } from 'react-router-dom';
 import type { Destination } from '../../types/home.types';
 import styles from './DestinationCard.module.scss';
 
@@ -10,7 +10,7 @@ interface DestinationCardProps {
 export function DestinationCard({
   destination,
 }: DestinationCardProps) {
-  return (
+return (
     <article className={styles.card}>
       <div className={styles.imageWrapper}>
         <img
@@ -35,13 +35,13 @@ export function DestinationCard({
           </p>
         </div>
 
-        <button
-          type="button"
+        <Link
+        to={`/destinations/${destination.id}`}
           className={styles.arrowButton}
           aria-label={`View ${destination.name} packages`}
         >
           <ArrowRight size={19} />
-        </button>
+        </Link>
       </div>
     </article>
   );

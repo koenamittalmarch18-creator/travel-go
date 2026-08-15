@@ -2,31 +2,31 @@ import type { Destination, TrustFeature } from '../types/home.types';
 
 export const popularDestinations: Destination[] = [
   {
-    id: 'himachal-pradesh',
+    id: 'himachal-explorer',
     name: 'Himachal Pradesh',
     startingPrice: 6500,
-    image: '/images/destinations/himachal.jpg',
+    image: '/images/destinations/himachal-2.jpg',
   },
   {
-    id: 'kerala',
+    id: 'kerala-backwaters',
     name: 'Kerala',
     startingPrice: 7500,
     image: '/images/destinations/kerala.jpg',
   },
   {
-    id: 'rajasthan',
+    id: 'rajasthan-heritage',
     name: 'Rajasthan',
     startingPrice: 8500,
     image: '/images/destinations/rajasthan.jpg',
   },
   {
-    id: 'uttarakhand',
+    id: 'uttarakhand-adventure',
     name: 'Uttarakhand',
     startingPrice: 6910,
     image: '/images/destinations/uttarakhand.jpg',
   },
   {
-    id: 'goa',
+    id: 'goa-beach-holiday',
     name: 'Goa',
     startingPrice: 7900,
     image: '/images/destinations/goa.jpg',
