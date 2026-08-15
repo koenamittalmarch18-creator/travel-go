@@ -1,0 +1,88 @@
+.filters {
+    display: grid;
+    grid-template-columns:
+      1.4fr
+      1.25fr
+      1fr
+      1fr
+      1.05fr;
+  
+    gap: 12px;
+  
+    padding: 18px 0;
+  }
+  
+  .filterField {
+    min-width: 0;
+  
+    label {
+      display: block;
+  
+      margin-bottom: 6px;
+  
+      color: #344054;
+      font-size: 10px;
+      font-weight: 600;
+    }
+  
+    select,
+    input {
+      width: 100%;
+      height: 34px;
+  
+      padding: 0 9px;
+  
+      border: 1px solid #e0e5ec;
+      border-radius: 5px;
+      outline: none;
+  
+      background: #ffffff;
+  
+      color: #344054;
+      font-size: 10px;
+  
+      &:focus {
+        border-color: #0757c9;
+      }
+    }
+  
+    select {
+      cursor: pointer;
+    }
+  }
+  
+  .inputWrapper {
+    position: relative;
+  
+    display: flex;
+    align-items: center;
+  
+    svg {
+      position: absolute;
+      left: 9px;
+  
+      color: #98a2b3;
+      pointer-events: none;
+    }
+  
+    input {
+      padding-left: 28px;
+    }
+  }
+  
+  .mobileFilterIcon {
+    display: none;
+  }
+  
+  @media (max-width: 850px) {
+    .filters {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .filters {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+  }
