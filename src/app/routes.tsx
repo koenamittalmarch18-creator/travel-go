@@ -6,7 +6,7 @@ import { EnquiryPage } from '../features/enquiry/pages/EnquiryPage';
 import { PackageDetailsPage } from '../features/packages/pages/PackageDetailsPage';
 import { AboutPage } from '../about/pages/AboutPage';
 import { EnquiryConfirmationPage } from '../features/packages/pages/EnquiryConfirmationPage';
-
+import { ContactPage } from '../features/contact/pages/ContactPage';
 
 export function AppRoutes() {
   return (
@@ -18,6 +18,7 @@ export function AppRoutes() {
         <Route path="/destinations/:packageId/enquiry" element={<EnquiryPage />} />
         <Route path="/destinations/:packageId/enquiry/success" element={<EnquiryConfirmationPage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="//contact" element={<ContactPage />} />
 
       </Routes>
     </BrowserRouter>
