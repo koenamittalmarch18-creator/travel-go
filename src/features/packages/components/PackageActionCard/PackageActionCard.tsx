@@ -1,4 +1,4 @@
-import { Mail, Share2 } from 'lucide-react';
+import { Mail, Share2, CreditCard } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 import type { TravelPackage } from '../../types/packages.types';
@@ -48,6 +48,13 @@ export function PackageActionCard({
       >
         <Mail size={17} />
         Enquire Now
+      </Link>
+      <Link
+        to={`/destinations/${packageItem.id}/payment`}
+        className={styles.enquireButton}
+      >
+        <CreditCard size={17} />
+        Pay Now
       </Link>
 
       <button
