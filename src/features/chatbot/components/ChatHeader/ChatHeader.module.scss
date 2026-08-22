@@ -1,0 +1,83 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    padding: 16px;
+  
+    border-bottom: 1px solid #e5e7eb;
+    background: #ffffff;
+  }
+  
+  .identity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    width: 40px;
+    height: 40px;
+  
+    border-radius: 50%;
+  
+    background: #0757c9;
+    color: #ffffff;
+  }
+  
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  
+    h2 {
+      margin: 0;
+  
+      font-size: 15px;
+      font-weight: 600;
+      color: #111827;
+    }
+  
+    span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+  
+      font-size: 12px;
+      color: #6b7280;
+    }
+  }
+  
+  .statusDot {
+    width: 7px;
+    height: 7px;
+  
+    border-radius: 50%;
+    background: #22c55e;
+  }
+  
+  .closeButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    width: 34px;
+    height: 34px;
+  
+    border: 0;
+    border-radius: 6px;
+  
+    background: transparent;
+    color: #6b7280;
+  
+    cursor: pointer;
+  
+    &:hover {
+      background: #f3f4f6;
+      color: #111827;
+    }
+  }

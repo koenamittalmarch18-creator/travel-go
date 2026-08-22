@@ -7,6 +7,7 @@ import { PopularDestinations } from '../components/PopularDestinations/PopularDe
 import { Testimonials } from '../components/Testimonials/Testimonials';
 import { TrustFeatures } from '../components/TrustFeatures/TrustFeatures';
 import { WhyChooseUs } from '../components/WhyChooseUs/WhyChooseUs';
+import { ChatbotWidget } from '../../chatbot/components/ChatbotWidget/ChatbotWidget';
 
 export function HomePage() {
   return (
@@ -31,9 +32,13 @@ export function HomePage() {
             <div className="col-lg-6">
               <Testimonials />
             </div>
+            <div>
+            <ChatbotWidget />
+            </div>
           </div>
         </div>
       </main>
+
 
       <Footer />
     </>
