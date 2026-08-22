@@ -1,0 +1,59 @@
+.container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  
+    padding: 10px;
+  
+    border-top: 1px solid #e5e7eb;
+    background: #ffffff;
+  
+    input {
+      flex: 1;
+  
+      min-width: 0;
+      height: 40px;
+  
+      padding: 0 12px;
+  
+      border: 1px solid #d1d5db;
+      border-radius: 20px;
+  
+      outline: none;
+  
+      font-family: inherit;
+      font-size: 13px;
+  
+      &:focus {
+        border-color: #0757c9;
+      }
+  
+      &:disabled {
+        background: #f3f4f6;
+      }
+    }
+  
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      flex-shrink: 0;
+  
+      width: 40px;
+      height: 40px;
+  
+      border: 0;
+      border-radius: 50%;
+  
+      background: #0757c9;
+      color: #ffffff;
+  
+      cursor: pointer;
+  
+      &:disabled {
+        background: #d1d5db;
+        cursor: not-allowed;
+      }
+    }
+  }

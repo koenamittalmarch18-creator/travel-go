@@ -1,6 +1,5 @@
 import { Mail, Share2, CreditCard } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import.meta.env.VITE_RAZORPAY_KEY_ID
 import type { TravelPackage } from '../../types/packages.types';
 
 import styles from './PackageActionCard.module.scss';
@@ -53,7 +52,7 @@ export function PackageActionCard({
       
       const options = {
         
-        key: import.meta.env.VITE_RAZORPAY_KEY_ID,
+        key: order.keyId,
         amount: order.amount,
         currency: order.currency,
         name: 'TravelGo',
