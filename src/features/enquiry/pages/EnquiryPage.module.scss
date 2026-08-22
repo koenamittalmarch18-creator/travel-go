@@ -1,0 +1,180 @@
+.page {
+    min-height: 600px;
+  
+    padding: 18px 0 55px;
+  
+    background: #ffffff;
+  }
+  
+  .container {
+    width: min(100% - 40px, 1100px);
+    margin-inline: auto;
+  }
+  
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  
+    margin-bottom: 7px;
+  
+    color: #98a2b3;
+    font-size: 7px;
+  
+    a {
+      color: #98a2b3;
+      text-decoration: none;
+  
+      &:hover {
+        color: #0757c9;
+      }
+    }
+  }
+  
+  .header {
+    margin-bottom: 14px;
+  }
+  
+  .header h1 {
+    margin: 0 0 4px;
+  
+    color: #101828;
+    font-size: 17px;
+    font-weight: 750;
+  }
+  
+  .header p {
+    margin: 0;
+  
+    color: #667085;
+    font-size: 8px;
+  }
+  
+  .content {
+    display: grid;
+    grid-template-columns: minmax(0, 1.7fr) minmax(230px, 0.8fr);
+    gap: 14px;
+  
+    align-items: start;
+  }
+  
+  .formCard {
+    padding: 12px;
+  
+    border: 1px solid #e4e7ec;
+    border-radius: 6px;
+  
+    background: #ffffff;
+  
+    box-shadow: 0 1px 3px rgb(16 24 40 / 4%);
+  }
+  
+  .formCard > * + * {
+    margin-top: 12px;
+  }
+  
+  .success {
+    min-height: 280px;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    padding: 30px;
+  
+    border: 1px solid #e4e7ec;
+    border-radius: 6px;
+  
+    text-align: center;
+  }
+  
+  .successIcon {
+    width: 42px;
+    height: 42px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    margin-bottom: 12px;
+  
+    border-radius: 50%;
+  
+    background: #dcfae6;
+    color: #039855;
+  
+    font-size: 22px;
+    font-weight: 700;
+  }
+  
+  .success h2 {
+    margin: 0 0 7px;
+  
+    color: #101828;
+    font-size: 15px;
+  }
+  
+  .success p {
+    max-width: 400px;
+  
+    margin: 0 0 16px;
+  
+    color: #667085;
+    font-size: 9px;
+    line-height: 1.5;
+  }
+  
+  .success a {
+    padding: 8px 15px;
+  
+    border-radius: 4px;
+  
+    background: #0757c9;
+    color: #ffffff;
+  
+    font-size: 8px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  .notFound {
+    min-height: 500px;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    text-align: center;
+  }
+  
+  .notFound h1 {
+    margin: 0 0 8px;
+  
+    color: #101828;
+    font-size: 20px;
+  }
+  
+  .notFound p {
+    margin: 0 0 15px;
+  
+    color: #667085;
+    font-size: 10px;
+  }
+  
+  .notFound a {
+    color: #0757c9;
+    font-size: 10px;
+    font-weight: 600;
+  }
+  
+  @media (max-width: 700px) {
+    .content {
+      grid-template-columns: 1fr;
+    }
+  
+    .container {
+      width: min(100% - 24px, 1100px);
+    }
+  }
