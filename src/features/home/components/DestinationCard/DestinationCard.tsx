@@ -1,10 +1,10 @@
 import { ArrowRight, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import type { Destination } from '../../types/home.types';
+import type { TravelDestination } from '../../../packages/types/travel.types';
 import styles from './DestinationCard.module.scss';
 
 interface DestinationCardProps {
-  destination: Destination;
+  destination: TravelDestination;
 }
 
 export function DestinationCard({
@@ -14,7 +14,7 @@ return (
     <article className={styles.card}>
       <div className={styles.imageWrapper}>
         <img
-          src={destination.image}
+          src={destination.cardImage}
           alt={destination.name}
           loading="lazy"
         />
@@ -31,7 +31,7 @@ return (
 
           <p>
             Starting from ₹
-            {destination.startingPrice.toLocaleString('en-IN')}
+            {destination.price.toLocaleString('en-IN')}
           </p>
         </div>
 

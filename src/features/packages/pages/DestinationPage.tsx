@@ -7,23 +7,12 @@ import { CategoryList } from '../components/CategoryList/CategoryList';
 import { PackageFilters } from '../components/PackageFilters/PackageFilters';
 import { PackageGrid } from '../components/PackageGrid/PackageGrid';
 import { PackagesHero } from '../components/PackagesHero/PackagesHero';
-import { travelPackages } from '../data/packages.data';
+import { travelData } from '../data/travel.data';
 import type {
   PackageFilters as PackageFiltersState,
 } from '../types/packages.types';
 
 import styles from './DestinationPage.module.scss';
-
-const categories = [
-  'All Packages',
-  'Himachal Pradesh',
-  'Uttarakhand',
-  'Kerala',
-  'Rajasthan',
-  'North East',
-  'Goa',
-  'Andaman',
-];
 
 const initialFilters: PackageFiltersState = {
   search: '',
@@ -40,20 +29,27 @@ export function DestinationPage() {
   const [selectedCategory, setSelectedCategory] =
     useState('All Packages');
 
+    
+const categories = useMemo(
+  () => [
+    'All Packages',
+    ...Array.from(
+      new Set(travelData.map(item => item.name)),
+    ),
+  ],
+  [],
+);
+
   const destinations = useMemo(
     () =>
       Array.from(
-        new Set(
-          travelPackages.map(
-            (packageItem) => packageItem.destination,
-          ),
-        ),
+        new Set(travelData.map(item => item.name)),
       ),
     [],
   );
 
   const filteredPackages = useMemo(() => {
-    const result = travelPackages.filter(
+    const result = travelData.filter(
       (packageItem) => {
         const searchTerm = filters.search
           .trim()
@@ -64,19 +60,17 @@ export function DestinationPage() {
           packageItem.name
             .toLowerCase()
             .includes(searchTerm) ||
-          packageItem.destination
+          packageItem.packageName
             .toLowerCase()
             .includes(searchTerm);
-
-        const matchesDestination =
-          filters.destination === 'all' ||
-          packageItem.destination ===
-            filters.destination;
-
-        const matchesCategory =
-          selectedCategory === 'All Packages' ||
-          packageItem.destination === selectedCategory;
-
+            const matchesDestination =
+            filters.destination === 'all' ||
+            packageItem.name === filters.destination;
+          
+          const matchesCategory =
+            selectedCategory === 'All Packages' ||
+            packageItem.name === selectedCategory;
+   
         const matchesPrice =
           filters.price === 'all' ||
           (filters.price === 'under-10000' &&

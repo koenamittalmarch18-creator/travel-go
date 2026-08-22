@@ -1,6 +1,6 @@
 import { Mail, Share2, CreditCard } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
+import.meta.env.VITE_RAZORPAY_KEY_ID
 import type { TravelPackage } from '../../types/packages.types';
 
 import styles from './PackageActionCard.module.scss';
@@ -28,6 +28,52 @@ export function PackageActionCard({
     await navigator.clipboard.writeText(shareUrl);
   };
 
+  const handlePayment = async () => {
+    try {
+      const amountInPaise = packageItem.price * 100;
+  
+      const response = await fetch(
+        `http://localhost:8080/api/payment/create-order?amount=${amountInPaise}`,
+        {
+          method: 'POST',
+        }
+      );
+  
+      if (!response.ok) {
+        throw new Error('Failed to create payment order');
+      }
+  
+      const order = await response.json();
+  
+      console.log('Razorpay order created:', order);
+
+      console.log(
+        'Razorpay key:'
+      );
+      
+      const options = {
+        
+        key: import.meta.env.VITE_RAZORPAY_KEY_ID,
+        amount: order.amount,
+        currency: order.currency,
+        name: 'TravelGo',
+        description: 'Travel Package Payment',
+        order_id: order.id,
+      
+        handler: (paymentResponse: RazorpayResponse) => {
+          console.log('Payment successful:', paymentResponse);
+        },
+      };
+      
+      const razorpay = new window.Razorpay(options);
+      
+      razorpay.open();
+
+    } catch (error) {
+      console.error('Payment order creation failed:', error);
+    }
+  };
+
   return (
     <aside className={styles.card}>
       <div className={styles.price}>
@@ -49,13 +95,14 @@ export function PackageActionCard({
         <Mail size={17} />
         Enquire Now
       </Link>
-      <Link
-        to={`/destinations/${packageItem.id}/payment`}
-        className={styles.enquireButton}
+      <button
+      type='button'
+      onClick={handlePayment}
+      className={styles.enquireButton}
       >
         <CreditCard size={17} />
         Pay Now
-      </Link>
+      </button>
 
       <button
         type="button"
