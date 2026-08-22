@@ -1,11 +1,11 @@
-import type { TravelPackage } from '../../types/packages.types';
+import type { TravelDestination } from '../../types/travel.types';
 
 import { PackageCard } from '../PackageCard/PackageCard';
 
 import styles from './PackageGrid.module.scss';
 
 interface PackageGridProps {
-  packages: TravelPackage[];
+  packages: TravelDestination[];
 }
 
 export function PackageGrid({

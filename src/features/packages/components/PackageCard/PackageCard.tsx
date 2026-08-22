@@ -1,13 +1,12 @@
 import { Heart, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-import type { TravelPackage } from '../../types/packages.types';
-
+import type { TravelDestination } from '../../types/travel.types';
 import styles from './PackageCard.module.scss';
 
 interface PackageCardProps {
-  packageItem: TravelPackage;
-}
+  packageItem: TravelDestination;
+  }
 
 export function PackageCard({
   packageItem,
@@ -20,7 +19,7 @@ export function PackageCard({
       >
         <div className={styles.imageWrapper}>
           <img
-            src={packageItem.image}
+            src={packageItem.packageImage}
             alt={packageItem.name}
             loading="lazy"
           />
@@ -44,7 +43,7 @@ export function PackageCard({
 
           <span className={styles.location}>
             <MapPin size={11} />
-            {packageItem.destination}
+            {packageItem.duration}
           </span>
         </div>
       </Link>

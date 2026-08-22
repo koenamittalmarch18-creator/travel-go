@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
 
-import { popularDestinations } from '../../data/home.data';
 import { DestinationCard } from '../DestinationCard/DestinationCard';
-
+import { travelData } from '../../../packages/data/travel.data';
 import styles from './PopularDestinations.module.scss';
 
 export function PopularDestinations() {
@@ -21,10 +20,11 @@ export function PopularDestinations() {
         </div>
 
         <div className={styles.grid}>
-          {popularDestinations.map((destination) => (
+          {travelData.map((destination) => (
             <DestinationCard
               key={destination.id}
-              destination={destination}
+              destination={destination
+              }
             />
           ))}
         </div>
