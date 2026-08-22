@@ -50,33 +50,37 @@ export function EnquiryPage() {
     );
   }
 
-  const handleSubmit = (data: EnquiryFormData) => {
-    /*
-     * Backend integration will be added here.
-     *
-     * Later:
-     * POST /api/enquiries
-     *
-     * The backend will:
-     * - validate the request
-     * - save the enquiry
-     * - trigger agency email notification
-     */
-    console.log('Enquiry submitted:', {
-      packageId: packageItem.id,
-      ...data,
-    });
-
-    setSubmitted(true);
-    navigate(`/destinations/${packageId}/enquiry/success`, {
-      state: {
-        referenceNumber: 'ENQ-20260815-001',
-        packageName: 'Himachal Explorer',
-        duration: '2 Nights / 3 Days',
-        packageImage:
-          '/images/destinations/himachal-1.jpg',
-      },
-    });
+  const handleSubmit = async (data: EnquiryFormData) => {
+    try {
+      const response = await fetch(
+        'http://localhost:8080/api/enquiries',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            packageId: packageItem.id,
+            ...data,
+          }),
+        },
+      );
+  
+      if (!response.ok) {
+        throw new Error('Failed to submit enquiry');
+      }
+  
+      setSubmitted(true);
+  
+      navigate(`/destinations/${packageId}/enquiry/success`, {
+        state: {
+          packageName: packageItem.name,
+        },
+      });
+    } catch (error) {
+      console.error('Enquiry submission failed:', error);
+      alert('Something went wrong. Please try again.');
+    }
   };
 
   return (
