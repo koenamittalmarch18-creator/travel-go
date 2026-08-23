@@ -1,0 +1,61 @@
+.hero {
+    position: relative;
+  
+    height: 150px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    overflow: hidden;
+  
+    background:
+      url('/images/hero/packages-banner.jpg')
+      center / cover no-repeat;
+  }
+  
+  .overlay {
+    position: absolute;
+    inset: 0;
+  
+    background: rgb(4 31 69 / 48%);
+  }
+  
+  .content {
+    position: relative;
+    z-index: 1;
+  
+    color: #ffffff;
+    text-align: center;
+  }
+  
+  .content h1 {
+    margin: 0 0 7px;
+  
+    font-size: 25px;
+    font-weight: 750;
+    line-height: 1.2;
+  }
+  
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  
+    font-size: 11px;
+  }
+  
+  .breadcrumb a {
+    color: rgb(255 255 255 / 80%);
+    text-decoration: none;
+  
+    &:hover {
+      color: #ffffff;
+    }
+  }
+  
+  .breadcrumb span:last-child {
+    color: #ffffff;
+    font-weight: 600;
+  }

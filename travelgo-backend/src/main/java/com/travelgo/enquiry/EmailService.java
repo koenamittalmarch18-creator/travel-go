@@ -1,5 +1,6 @@
 package com.travelgo.enquiry;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
@@ -8,6 +9,8 @@ import org.springframework.stereotype.Service;
 public class EmailService {
 
     private final JavaMailSender mailSender;
+    @Value("${MAIL_USERNAME}")
+    private String enquiryReceiverEmail;
 
     public EmailService(JavaMailSender mailSender) {
         this.mailSender = mailSender;
@@ -17,7 +20,7 @@ public class EmailService {
 
         SimpleMailMessage message = new SimpleMailMessage();
 
-        message.setTo("koenamittalmarch18@gmail.com");
+        message.setTo(enquiryReceiverEmail);
         message.setSubject("New TravelGo Enquiry");
 
         message.setText(
