@@ -1,0 +1,134 @@
+.card {
+    overflow: hidden;
+  
+    border: 1px solid #e5e7eb;
+    border-radius: 11px;
+    background: #ffffff;
+  
+    box-shadow: 0 1px 3px rgb(16 24 40 / 6%);
+  
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgb(16 24 40 / 10%);
+    }
+  }
+  
+  .imageWrapper {
+    position: relative;
+  
+    height: 150px;
+    overflow: hidden;
+  
+    img {
+      width: 100%;
+      height: 100%;
+  
+      display: block;
+  
+      object-fit: cover;
+  
+      transition: transform 0.35s ease;
+    }
+  
+    .card:hover & img {
+      transform: scale(1.04);
+    }
+  }
+  
+  .location {
+    position: absolute;
+    bottom: 10px;
+    left: 12px;
+  
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  
+    padding: 6px 10px;
+  
+    border-radius: 5px;
+    background: rgb(16 24 40 / 72%);
+  
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.2;
+  
+    backdrop-filter: blur(4px);
+  }
+  
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  
+    min-height: 76px;
+    padding: 14px 16px;
+  }
+  
+  .content h3 {
+    margin: 0 0 6px;
+  
+    color: #101828;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+  
+  .content p {
+    margin: 0;
+  
+    color: #0757c9;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  
+  .arrowButton {
+    flex-shrink: 0;
+  
+    width: 38px;
+    height: 38px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    border: 0;
+    border-radius: 50%;
+  
+    background: #edf4ff;
+    color: #0757c9;
+  
+    cursor: pointer;
+  
+    transition:
+      background-color 0.2s ease,
+      transform 0.2s ease;
+  
+    &:hover {
+      background: #dceaff;
+      transform: translateX(2px);
+    }
+  
+    &:focus-visible {
+      outline: 2px solid #0757c9;
+      outline-offset: 2px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .imageWrapper {
+      height: 190px;
+    }
+  
+    .content {
+      min-height: 72px;
+      padding: 13px 14px;
+    }
+  }

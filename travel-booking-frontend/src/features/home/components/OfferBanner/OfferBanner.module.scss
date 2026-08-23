@@ -1,0 +1,99 @@
+.section {
+    padding: 20px 0;
+  }
+  
+  .banner {
+    width: min(100% - 40px, 1400px);
+    min-height: 150px;
+    margin-inline: auto;
+  
+    display: flex;
+    align-items: center;
+  
+    overflow: hidden;
+  
+    border-radius: 12px;
+  
+    background:
+      linear-gradient(90deg, rgb(3 65 150 / 94%), rgb(3 65 150 / 58%)),
+      url('/images/hero/offer-banner.png') center / cover no-repeat;
+  
+    color: #ffffff;
+  }
+  
+  .content {
+    padding: 24px 38px;
+  }
+  
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  
+    margin-bottom: 8px;
+    padding: 5px 10px;
+  
+    border-radius: 5px;
+    background: rgb(255 255 255 / 14%);
+  
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  
+  .content h2 {
+    margin: 0 0 7px;
+  
+    font-size: 25px;
+    font-weight: 750;
+    line-height: 1.12;
+  }
+  
+  .content p {
+    margin: 0;
+  
+    color: rgb(255 255 255 / 90%);
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  
+  .button {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+  
+    margin-top: 13px;
+    padding: 9px 16px;
+  
+    border-radius: 6px;
+    background: #ffffff;
+  
+    color: #0757c9;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+  
+    transition: transform 0.2s ease;
+  
+    &:hover {
+      transform: translateY(-1px);
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .banner {
+      width: min(100% - 24px, 1400px);
+    }
+  
+    .content {
+      padding: 25px;
+    }
+  
+    .content h2 {
+      font-size: 22px;
+    }
+  
+    .desktopBreak {
+      display: none;
+    }
+  }
