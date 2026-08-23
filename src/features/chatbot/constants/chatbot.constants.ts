@@ -17,9 +17,5 @@ export const QUICK_ACTIONS: QuickAction[] = [
   {
     label: 'Plan my vacation',
     prompt: 'Help me plan my vacation',
-  },
-  {
-    label: "What's included?",
-    prompt: 'What is included in your travel packages?',
-  },
+  }
 ];
