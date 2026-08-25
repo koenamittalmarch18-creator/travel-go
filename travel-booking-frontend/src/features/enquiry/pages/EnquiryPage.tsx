@@ -53,7 +53,7 @@ export function EnquiryPage() {
   const handleSubmit = async (data: EnquiryFormData) => {
     try {
       const response = await fetch(
-        'http://localhost:8080/api/enquiries',
+        'https://travel-go-55gl.onrender.com/api/enquiries',
         {
           method: 'POST',
           headers: {

@@ -32,7 +32,7 @@ export function PackageActionCard({
       const amountInPaise = packageItem.price * 100;
   
       const response = await fetch(
-        `http://localhost:8080/api/payment/create-order?amount=${amountInPaise}`,
+        `https://travel-go-55gl.onrender.com/api/payment/create-order?amount=${amountInPaise}`,
         {
           method: 'POST',
         }
