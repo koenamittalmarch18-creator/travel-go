@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @RestController
 @RequestMapping("/api/payment")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = {"http://localhost:5173",
+"https://travel-go-frontend.onrender.com"})
 public class PaymentController {
 
     private final RazorpayService razorpayService;

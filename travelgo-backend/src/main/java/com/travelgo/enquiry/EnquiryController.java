@@ -7,7 +7,8 @@ import com.travelgo.security.SecurityUtils;
 
 @RestController
 @RequestMapping("/api/enquiries")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = {"http://localhost:5173",
+		"https://travel-go-frontend.onrender.com"})
 public class EnquiryController {
 
 	private final EmailService emailService;
